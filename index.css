@@ -286,15 +286,15 @@ body {
 
 @media (min-width: 375px) {
   
-  .title{
-    margin-top: 80px;
+  .wrapper{
+    margin-top: -250px;
   }
   .sun{
-    margin-top: 55px;
-}
+    margin-top: 50px;
+  }
   .site-footer{
     margin-top: 20px;
-    top: 720px;
+    top: 690px;
   }
 }
 @media (min-width: 425px){
@@ -465,6 +465,7 @@ body {
     transform: translateY(0);
   }
 }
+
 
 
 
