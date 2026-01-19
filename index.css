@@ -297,6 +297,16 @@ body {
     top: 690px;
   }
 }
+@media(min-width:414px){
+  .site-footer{
+    margin-top: 0;
+    top: 500  px;
+    z-index: 20;
+  }
+  .wrapper{
+    margin-top: -350px;
+  }
+}
 @media (min-width: 425px){
   .site-footer{
     
