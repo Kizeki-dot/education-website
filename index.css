@@ -300,7 +300,7 @@ body {
 @media(min-width:414px){
   .site-footer{
     margin-top: 0;
-    top: 500px;
+    top: 750px;
     z-index: 20;
   }
   .wrapper{
