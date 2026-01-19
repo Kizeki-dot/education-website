@@ -301,15 +301,20 @@ body {
   .site-footer{
     
   }
-  .title{
-    margin-top: 75px;
-  }
+
   .sun{
     margin-top: 55px;
 }
 }
 
-
+@media (min-width: 430px){
+  .wrapper{
+    margin-top: -450px;
+  }
+  .site-footer{
+    top: 750px;
+  }
+}
 /*For Ipad users*/
 @media (min-width: 768px){
   .site-footer{
@@ -465,8 +470,6 @@ body {
     transform: translateY(0);
   }
 }
-
-
 
 
 
