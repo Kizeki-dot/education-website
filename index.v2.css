@@ -106,21 +106,21 @@ body {
   opacity: 0;
   transform: translateY(-60px);
   animation: cardSlide 2s ease forwards;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
 }
 
 .card.log-in{
   opacity: 0;
   transform: translateX(60px);
   animation: cardSlide 2s ease forwards;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
 }
 
 .card.sign-up{
   opacity: 0;
   transform: translateX(-60px);
   animation: cardSlide 2s ease forwards;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
 }
 .card-box {
   display: flex;
@@ -227,6 +227,7 @@ button:active {
     transform: translateY(0);
   }
 }
+
 
 
 
