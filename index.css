@@ -352,7 +352,9 @@ body {
   }
 }
 @media (min-width: 1366px){
-
+.site-header{
+    max-width: 1880px;
+  }
   body{
     overflow-y: auto;
   }
@@ -401,6 +403,7 @@ body {
     transform: translateY(0);
   }
 }
+
 
 
 
