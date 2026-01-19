@@ -391,7 +391,46 @@ body {
   }
 }
 
+/*For IOS */
+@media  screen and (width: 414px) and (height: 896px) {
+  .wrapper{
+    margin-top: -450px;
+  }
 
+  .site-footer{
+   top: 800px;
+  }
+
+}
+
+@media  screen and (width: 390px) and (height: 844px) {
+  .wrapper{
+    margin-top: -400px;
+  }
+
+  .site-footer{
+   top: 750px;
+  }
+
+}
+
+@media  screen and (width: 375px) and (height: 667px) {
+  .sun{
+    margin-top: 20px;
+  }
+  .title{
+    margin-top: 80px;
+  }
+  .wrapper p{
+    font-size: 14px;
+  }
+
+  .site-footer{
+    margin-top: 5px;
+   top: 600px;
+  }
+
+}
 /* Animations */
 @keyframes slideFromLeft {
   to { left: 20px; }
