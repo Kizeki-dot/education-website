@@ -1,220 +1,174 @@
-/* Background you like */
-body {
+.bg-sun {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+  background: #ffd447;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255,212,71,0.7);
+  z-index: 1;
+}
+
+.bg-cloud {
+  position: fixed;
+  width: 150px;
+  height: 75px;
+  background: white;
+  border-radius: 50px;
+  opacity: 0.85;
+  filter: blur(1px);
+  z-index: 1;
+}
+
+/* Cloud positions */
+.bg-cloud.left.c1 { top: 140px; left: -20px; }
+.bg-cloud.left.c2 { top: 280px; left: -50px; }
+
+.bg-cloud.right.c3 { top: 200px; right: -30px; }
+.bg-cloud.right.c4 { top: 360px; right: -60px; }
+
+.site-header,
+.container,
+.site-footer {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* ===== Base Reset ===== */
+* {
   margin: 0;
-  min-height: 120vh;
-  background: linear-gradient(#bfe7ff, #ffe3f1);
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial, sans-serif;
+  background: linear-gradient(#bfe7ff, #ffe3f1);
+  color: #333;
+  min-height: 100svh;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-top: 40px;
-  position: relative;
   overflow-x: hidden;
 }
 
-/* Clouds (same style you like) */
-.cloud {
-  margin-top: 100px;
-  position: absolute;
-  width: 160px;
-  height: 90px;
-  background: #fff;
-  border-radius: 50px;
-  opacity: 0.8;
-  filter: blur(2px);
-}
 
-/* Cloud animations */
-.left-cloud-1 {
-  top: 15%;
-  left: -200px;
-  animation: slideFromLeft 1.2s forwards;
-}
-
-.left-cloud-2 {
-  top: 45%;
-  left: -200px;
-  animation: slideFromLeft 1.4s forwards;
-}
-
-.right-cloud-1 {
-  top: 25%;
-  right: -200px;
-  animation: slideFromRight 1.2s forwards;
-}
-
-.right-cloud-2 {
-  top: 60%;
-  right: -200px;
-  animation: slideFromRight 1.4s forwards;
-}
-
-/* Sun drops from top */
-.sun {
-  margin-top: 20px;
-  position: absolute;
-  top: -150px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 80px;
-  background: #ffd447;
-  border-radius: 50%;
-  box-shadow: 0 0 20px rgba(255,212,71,0.7);
-  animation: dropSun 1.5s forwards;
-}
-
-/* Main wrapper */
-.wrapper {
-
-  width: 90%;
-  z-index: 10;
+/* ===== Header ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  padding: 14px;
   text-align: center;
-  margin-top: -300px;
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 10;
 }
 
-/* Title */
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* ===== Main Layout ===== */
+.container {
+  margin-top: 30px;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  z-index: 5;
+  flex: 1; /* pushes footer down */
+}
+
+
 .title {
   opacity: 0;
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-  color: #333;
   transform: translateY(-30px);
   animation: titleDrop 0.8s ease forwards;
   animation-delay: 0.1s;
+  font-size: 2.3rem;
+  margin-bottom: 20px;
 }
 
-/* Paragraph box under Welcome */
 .intro-box {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  margin-bottom: 25px;
   opacity: 0;
   transform: translateY(-60px);
   animation: introDrop 0.8s ease forwards;
   animation-delay: 0.5s;
-  background: #fff;
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
-  margin-bottom: 25px;
-}
-
-/* Card containers */
-.card-boxes {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-
-/* Each card */
-.card.sign-up{
-  opacity: 0;
-  transform: translateX(-60px);
-  animation: cardSlide 0.8s ease forwards;
-  flex:1;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  padding: 20px;
-  border-radius: 18px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
-  text-align: left;
 }
 
 .card.log-in{
   opacity: 0;
   transform: translateX(60px);
   animation: cardSlide 0.8s ease forwards;
-  flex:1;
+  animation-delay: 0.6;
+  -webkit-animation: cardSlide 0.8s ease forwards;
+}
+
+.card.sign-up{
+  opacity: 0;
+  transform: translateX(-60px);
+  animation: cardSlide 0.8s ease forwards;
+  animation-delay: 0.6;
+}
+.card-box {
   display: flex;
-  flex-direction: column;
-  background: #fff;
+  flex-direction: row;   /* <-- makes them row */
+  gap: 20px;
+}
+
+.card {
+  flex: 1; 
+  background: white;
   padding: 20px;
   border-radius: 18px;
-  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
-  text-align: left;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
-.card:nth-child(1) {
-  animation-delay: 0.5s;
+.card p {
+  margin-bottom: 14px;
 }
 
-.card:nth-child(2) {
-  animation-delay: 0.5s;
-}
-
-/* Buttons inside cards */
-.card-btn {
+button {
   width: 100%;
   padding: 12px;
-  margin-top: 14px;
   border: none;
   border-radius: 12px;
-  font-size: 16px;
   background: linear-gradient(135deg, #ff63b6, #7c5cff);
-  color: #fff;
+  color: white;
+  font-size: 16px;
 }
 
-.card-btn:active{
-    background: linear-gradient(135deg, #f10081, #3300ff);
-}
-.card p{
-  margin: 0;
-  flex: 1;
-  text-align: center;
+button:active {
+  background: linear-gradient(135deg, #f10081, #3300ff);
 }
 
-/* Header bar */
-.site-header {
-  position: fixed;
-  top: calc(env(safe-area-inset-top) + 1px);
-  width: 100%;
-  max-width: 1000px;
-  padding: 10px 18px;
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 50;
-}
-
-/* Logo / title */
-.logo {
-  opacity: 0;
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #444;
-}
-
+/* ===== Footer ===== */
 .site-footer {
-  position: absolute;
-  top: 750px;
+  margin-top: 40px;
   width: 100%;
-  max-width: 1000px;
-  padding: 14px 10px;
-  height: 300px;
-
-  background: rgba(255, 255, 255, 0.65);
+  max-width: 900px;
+  background: rgba(255,255,255,0.7);
   backdrop-filter: blur(10px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  padding: 20px;
   text-align: center;
-  font-size: 14px;
-  color: #444;
-  z-index: 20;
-}
-
-.site-footer p {
-  margin: 0 0 6px 0;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
 }
 
 .footer-links {
+  margin-top: 8px;
   display: flex;
   justify-content: center;
   gap: 18px;
@@ -226,172 +180,31 @@ body {
   font-weight: bold;
 }
 
-.footer-links a:active {
-  color: #ff63b6;
-}
+/* ===== Tablet Layout ===== */
+@media (min-width: 768px) {
 
-@media (min-width: 700px) {
-
-
-  .site-footer{
-    margin-top: 5px;
-    top: 700px;
-    height: 200px;
-  }
-  .sun{
-    margin-top: 50px;
-  }
-  .wrapper{
-    margin-top: -250px;
-  }
-  .intro-box{
-    padding: 26px;
-    min-height: 110px;
+  .container {
+    margin-top: 160px;
   }
 
-  .card.sign-up,
-  .card.log-in{
-    padding: 26px;
-    min-height: 150px;
+  .intro-box p {
+    font-size: 1.1rem;
   }
 
-  .card p{
-    padding-top: 8%;
-    flex:0;
-    font-size: 19px;
+  .card-box {
+    flex-direction: row;
   }
 
-  .intro-box p{
-    font-size: 19px;
+  .card {
+    flex: 1;
   }
-}
-
-@media (min-width: 320px) and (max-width: 374px) {
-  .title{
-    margin-top: 80px;
-  }
-  .sun{
-    margin-top: 50px;
-  }
-  .wrapper{
-    margin-top: -300px;
-  }
-  .site-footer{
-    margin-top: 15px;
-  }
-}
-
-@media (min-width: 375px) and (max-width: 424px) {
-  .title{
-    margin-top: 80px;
-  }
-  .sun{
-    margin-top: 55px;
-}
-}
-@media (min-width: 425px) and (max-width: 699px) {
-  .title{
-    margin-top: 10px;
-  }
-  .sun{
-    margin-top: 55px;
-  }
-  .site-footer{
-    margin-top: 15px;
-  }
-}
-
-
-/*For Ipad users*/
-@media (min-width: 768px){
-  .site-footer{
-    margin-top: 150px;
-    height: 800px;
-    background: #fff;
-  }
-  .wrapper{
-    margin-top: -400px;
-  }
-}
-
-@media (min-width: 820px){
-
-  .site-footer{
-    margin-top: 150px;
-    height: 800px;
-    background: #fff;
-  }
-  .wrapper{
-    margin-top: -600px;
-  }
-}
-
-@media (min-width: 1024px){
-    .wrapper{
-    margin-top: -300px;
-  }
-  .site-footer{
-    max-width: 2000px;
-    width: 100%;
-    margin-top: 1px;
-    height: 1000px;
-    background: #fff;
-  }
-}
-
-@media screen and (width: 1024px) and (height: 1366px){
-    .wrapper{
-    margin-top: -1000px;
-  }
-  .site-footer{
-    margin-top: 50px;
-  }
-
-  .wrapper p{
-    font-size: x-large;
-  }
-  .site-footer p{
-    font-size: large;
-  }
-}
-@media (min-width: 1366px){
-
-.site-header{
-    max-width: 1880px;
-  }
-  body{
-    overflow-y: auto;
-  }
-  .site-footer{
-    max-width: 2000px;
-    width: 100%;
-    margin-top: 30px;
-    height: 1000px;
-    background: #fff;
-  }
-  .wrapper{
-    margin-top: -500px;
-  }
-}
-
-/* Animations */
-@keyframes slideFromLeft {
-  to { left: 20px; }
-}
-
-@keyframes slideFromRight {
-  to { right: 20px; }
-}
-
-@keyframes dropSun {
-  to { top: 40px; }
 }
 
 @keyframes cardSlide {
   to {
     opacity: 1;
-    transform: translateY(0);
-     }
+    transform: translateX(0);
+}
 }
 
 @keyframes introDrop {
@@ -406,3 +219,90 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+
+
+
+
+
+
+
+/* ===== Sky Wrapper ===== */
+.sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  overflow: hidden; /* prevents side scrolling */
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===== Sun ===== */
+.sun {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  background: #ffd447;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255,212,71,0.8);
+  animation: sunFloat 4s ease-in-out infinite;
+}
+
+/* ===== Clouds ===== */
+.cloud {
+  position: absolute;
+  width: 140px;
+  height: 70px;
+  background: white;
+  border-radius: 50px;
+  opacity: 0.85;
+  filter: blur(1px);
+}
+
+/* left side clouds */
+.cloud-left-1 {
+  top: 60px;
+  left: -150px;
+  animation: cloudMoveLeft 18s linear infinite;
+}
+
+.cloud-left-2 {
+  top: 120px;
+  left: -180px;
+  animation: cloudMoveLeft 22s linear infinite;
+}
+
+/* right side clouds */
+.cloud-right-1 {
+  top: 80px;
+  right: -150px;
+  animation: cloudMoveRight 20s linear infinite;
+}
+
+.cloud-right-2 {
+  top: 140px;
+  right: -180px;
+  animation: cloudMoveRight 26s linear infinite;
+}
+
+/* ===== Animations ===== */
+@keyframes cloudMoveLeft {
+  from { left: -180px; }
+  to   { left: 110%; }
+}
+
+@keyframes cloudMoveRight {
+  from { right: -180px; }
+  to   { right: 110%; }
+}
+
+@keyframes sunFloat {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%     { transform: translateX(-50%) translateY(-8px); }
+}
