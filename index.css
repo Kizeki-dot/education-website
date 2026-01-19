@@ -293,7 +293,8 @@ body {
     margin-top: 55px;
 }
   .site-footer{
-    top: 700px;
+    margin-top: 20px;
+    top: 720px;
   }
 }
 @media (min-width: 425px){
@@ -464,6 +465,7 @@ body {
     transform: translateY(0);
   }
 }
+
 
 
 
