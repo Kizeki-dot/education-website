@@ -352,7 +352,8 @@ body {
   }
 }
 @media (min-width: 1366px){
-.site-header{
+
+  .site-header{
     max-width: 1880px;
   }
   body{
@@ -368,7 +369,11 @@ body {
   .wrapper{
     margin-top: -500px;
   }
+  .card p{
+    padding: 16px;
+  }
 }
+
 
 /* Animations */
 @keyframes slideFromLeft {
@@ -403,7 +408,6 @@ body {
     transform: translateY(0);
   }
 }
-
 
 
 
