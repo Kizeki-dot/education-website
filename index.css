@@ -194,7 +194,7 @@ body {
 }
 
 .site-footer {
-  position: fixed;
+  position: absolute;
   top: 750px;
   width: 100%;
   max-width: 1000px;
@@ -326,6 +326,7 @@ body {
     transform: translateY(0);
   }
 }
+
 
 
 
