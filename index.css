@@ -153,7 +153,7 @@ body {
   border: none;
   border-radius: 12px;
   font-size: 16px;
-  background: linear-gradient(135deg, #ff63b6, #7c5cff);
+  background: linear-gradient(135deg, #ff5bb2, #7c5cff);
   color: #fff;
 }
 
@@ -270,28 +270,38 @@ body {
   .title{
     margin-top: 80px;
   }
-  .sun{
-    margin-top: 50px;
-  }
+
   .wrapper{
     margin-top: -300px;
   }
-}
+  .wrapper p{
+    font-size: small;
+  }
 
-@media (min-width: 375px) and (max-width: 424px) {
+  .site-footer{
+    top: 700px;
+  }
+}
+  
+
+@media (min-width: 375px) {
+  
   .title{
     margin-top: 80px;
   }
   .sun{
     margin-top: 55px;
 }
-}
-@media (min-width: 425px) and (max-width: 699px) {
   .site-footer{
-    margin-top: 50px;
+    top: 700px;
+  }
+}
+@media (min-width: 425px){
+  .site-footer{
+    
   }
   .title{
-    margin-top: 80px;
+    margin-top: 75px;
   }
   .sun{
     margin-top: 55px;
@@ -302,12 +312,12 @@ body {
 /*For Ipad users*/
 @media (min-width: 768px){
   .site-footer{
-    margin-top: 150px;
+    margin-top: 5px;
     height: 800px;
     background: #fff;
   }
   .wrapper{
-    margin-top: -400px;
+    margin-top: -320px;
   }
 }
 
@@ -353,6 +363,13 @@ body {
 }
 @media (min-width: 1366px){
 
+  .card-btn:hover{
+    background: linear-gradient(135deg, #ff3aa5, #693bff);
+    cursor: pointer;
+}
+.card-btn:active{
+    background: linear-gradient(135deg, #f10081, #3300ff);
+}
   .site-header{
     max-width: 1880px;
   }
