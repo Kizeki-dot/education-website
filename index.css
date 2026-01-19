@@ -1,0 +1,323 @@
+/* Background you like */
+body {
+  margin: 0;
+  min-height: 120vh;
+  background: linear-gradient(#bfe7ff, #ffe3f1);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Clouds (same style you like) */
+.cloud {
+  margin-top: 100px;
+  position: absolute;
+  width: 160px;
+  height: 90px;
+  background: #fff;
+  border-radius: 50px;
+  opacity: 0.8;
+  filter: blur(2px);
+}
+
+/* Cloud animations */
+.left-cloud-1 {
+  top: 15%;
+  left: -200px;
+  animation: slideFromLeft 1.2s forwards;
+}
+
+.left-cloud-2 {
+  top: 45%;
+  left: -200px;
+  animation: slideFromLeft 1.4s forwards;
+}
+
+.right-cloud-1 {
+  top: 25%;
+  right: -200px;
+  animation: slideFromRight 1.2s forwards;
+}
+
+.right-cloud-2 {
+  top: 60%;
+  right: -200px;
+  animation: slideFromRight 1.4s forwards;
+}
+
+/* Sun drops from top */
+.sun {
+  margin-top: 20px;
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  background: #ffd447;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255,212,71,0.7);
+  animation: dropSun 1.5s forwards;
+}
+
+/* Main wrapper */
+.wrapper {
+  
+  width: 90%;
+  z-index: 10;
+  text-align: center;
+  margin-top: -300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Title */
+.title {
+  opacity: 0;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: #333;
+  transform: translateY(-30px);
+  animation: titleDrop 0.8s ease forwards;
+  animation-delay: 0.1s;
+}
+
+/* Paragraph box under Welcome */
+.intro-box {
+  opacity: 0;
+  transform: translateY(-60px);
+  animation: introDrop 0.8s ease forwards;
+  animation-delay: 0.5s;
+  background: #fff;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+  margin-bottom: 25px;
+}
+
+/* Card containers */
+.card-boxes {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+
+/* Each card */
+.card.sign-up{
+  opacity: 0;
+  transform: translateX(-60px);
+  animation: cardSlide 0.8s ease forwards;
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+  text-align: left;
+}
+
+.card.log-in{
+  opacity: 0;
+  transform: translateX(60px);
+  animation: cardSlide 0.8s ease forwards;
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+  text-align: left;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+/* Buttons inside cards */
+.card-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  background: linear-gradient(135deg, #ff63b6, #7c5cff);
+  color: #fff;
+}
+
+.card-btn:active{
+    background: linear-gradient(135deg, #f10081, #3300ff);
+}
+.card p{
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+/* Header bar */
+.site-header {
+  position: fixed;
+  top: calc(env(safe-area-inset-top) + 1px);
+  width: 100%;
+  max-width: 1000px;
+  padding: 10px 18px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+/* Logo / title */
+.logo {
+  opacity: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.site-footer {
+  position: fixed;
+  top: 750px;
+  width: 100%;
+  max-width: 1000px;
+  padding: 14px 10px;
+  height: 300px;
+  
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  text-align: center;
+  font-size: 14px;
+  color: #444;
+  z-index: 20;
+}
+
+.site-footer p {
+  margin: 0 0 6px 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #7c5cff;
+  font-weight: bold;
+}
+
+.footer-links a:active {
+  color: #ff63b6;
+}
+
+@media (min-width: 700px) {
+  .site-footer{
+    top: 700px;
+    height: 200px;
+  }
+  .sun{
+    margin-top: 50px;
+  }
+  .wrapper{
+    margin-top: -250px;
+  }
+  .intro-box{
+    padding: 26px;
+    min-height: 110px;
+  }
+
+  .card.sign-up,
+  .card.log-in{
+    padding: 26px;
+    min-height: 150px;
+  }
+
+  .card p{
+    padding-top: 8%;
+    flex:0;
+    font-size: 19px;
+  }
+ 
+  .intro-box p{
+    font-size: 19px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 374px) {
+  .sun{
+    margin-top: 50px;
+  }
+  .wrapper{
+    margin-top: -300px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 424px) {
+  .sun{
+    margin-top: 55px;
+}
+}
+@media (min-width: 425px) and (max-width: 699px) {
+  .sun{
+    margin-top: 55px;
+}
+}
+
+
+/* Animations */
+@keyframes slideFromLeft {
+  to { left: 20px; }
+}
+
+@keyframes slideFromRight {
+  to { right: 20px; }
+}
+
+@keyframes dropSun {
+  to { top: 40px; }
+}
+
+@keyframes cardSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+     }
+}
+
+@keyframes introDrop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleDrop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
