@@ -268,10 +268,10 @@ body {
 
 @media (min-width: 320px) and (max-width: 374px) {
   .title{
-    margin-top: 10px;
+    margin-top: 80px;
   }
   .sun{
-    margin-top: 15px;
+    margin-top: 50px;
   }
   .wrapper{
     margin-top: -300px;
@@ -283,10 +283,10 @@ body {
 
 @media (min-width: 375px) and (max-width: 424px) {
   .title{
-    margin-top: 10px;
+    margin-top: 80px;
   }
   .sun{
-    margin-top: 45px;
+    margin-top: 55px;
 }
 }
 @media (min-width: 425px) and (max-width: 699px) {
@@ -294,7 +294,7 @@ body {
     margin-top: 10px;
   }
   .sun{
-    margin-top: 60px;
+    margin-top: 55px;
   }
   .site-footer{
     margin-top: 15px;
