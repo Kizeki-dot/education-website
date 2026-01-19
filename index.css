@@ -231,7 +231,10 @@ body {
 }
 
 @media (min-width: 700px) {
+
+  
   .site-footer{
+    margin-top: 5px;
     top: 700px;
     height: 200px;
   }
@@ -284,6 +287,9 @@ body {
 }
 }
 @media (min-width: 425px) and (max-width: 699px) {
+  .site-footer{
+    margin-top: 50px;
+  }
   .title{
     margin-top: 80px;
   }
@@ -292,6 +298,75 @@ body {
 }
 }
 
+
+/*For Ipad users*/
+@media (min-width: 768px){
+  .site-footer{
+    margin-top: 150px;
+    height: 800px;
+    background: #fff;
+  }
+  .wrapper{
+    margin-top: -400px;
+  }
+}
+
+@media (min-width: 820px){
+
+  .site-footer{
+    margin-top: 150px;
+    height: 800px;
+    background: #fff;
+  }
+  .wrapper{
+    margin-top: -600px;
+  }
+}
+
+@media (min-width: 1024px){
+    .wrapper{
+    margin-top: -300px;
+  }
+  .site-footer{
+    max-width: 2000px;
+    width: 100%;
+    margin-top: 1px;
+    height: 1000px;
+    background: #fff;
+  }
+}
+
+@media screen and (width: 1024px) and (height: 1366px){
+    .wrapper{
+    margin-top: -1000px;
+  }
+  .site-footer{
+    margin-top: 50px;
+  }
+  
+  .wrapper p{
+    font-size: x-large;
+  }
+  .site-footer p{
+    font-size: large;
+  }
+}
+@media (min-width: 1366px){
+
+  body{
+    overflow-y: auto;
+  }
+  .site-footer{
+    max-width: 2000px;
+    width: 100%;
+    margin-top: 30px;
+    height: 1000px;
+    background: #fff;
+  }
+  .wrapper{
+    margin-top: -500px;
+  }
+}
 
 /* Animations */
 @keyframes slideFromLeft {
@@ -326,7 +401,6 @@ body {
     transform: translateY(0);
   }
 }
-
 
 
 
