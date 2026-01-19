@@ -277,11 +277,17 @@ body {
 }
 
 @media (min-width: 375px) and (max-width: 424px) {
+  .title{
+    margin-top: 80px;
+  }
   .sun{
     margin-top: 55px;
 }
 }
 @media (min-width: 425px) and (max-width: 699px) {
+  .title{
+    margin-top: 80px;
+  }
   .sun{
     margin-top: 55px;
 }
@@ -321,6 +327,7 @@ body {
     transform: translateY(0);
   }
 }
+
 
 
 
