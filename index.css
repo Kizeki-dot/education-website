@@ -1,0 +1,232 @@
+/* ===== Background Decorations ===== */
+.bg-sun {
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 90px;
+  background: #ffd447;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(255,212,71,0.7);
+  z-index: 1;
+}
+
+.bg-cloud {
+  position: fixed;
+  width: 150px;
+  height: 75px;
+  background: white;
+  border-radius: 50px;
+  opacity: 0.85;
+  filter: blur(1px);
+  z-index: 1;
+}
+
+/* Cloud positions */
+.bg-cloud.left.c1 { top: 140px; left: -20px; }
+.bg-cloud.left.c2 { top: 280px; left: -50px; }
+
+.bg-cloud.right.c3 { top: 200px; right: -30px; }
+.bg-cloud.right.c4 { top: 360px; right: -60px; }
+
+.site-header,
+.container,
+.site-footer {
+  position: relative;
+  z-index: 5;
+}
+
+
+/* ===== Base Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#bfe7ff, #ffe3f1);
+  color: #333;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+
+/* ===== Header ===== */
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  padding: 14px;
+  text-align: center;
+  border-radius: 0 0 18px 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* ===== Main Layout ===== */
+.container {
+  margin-top: 30px;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  z-index: 5;
+  flex: 1; /* pushes footer down */
+}
+
+
+.title {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: titleDrop 0.8s ease forwards;
+  animation-delay: 0.1s;
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+
+.intro-box {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  margin-bottom: 25px;
+  opacity: 0;
+  transform: translateY(-60px);
+  animation: introDrop 0.8s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.card.log-in{
+  opacity: 0;
+  transform: translateX(60px);
+  animation: cardSlide 0.8s ease forwards;
+  animation-delay: 0.6s;
+  -webkit-animation: cardSlide 0.8s ease forwards;
+}
+
+.card.sign-up{
+  opacity: 0;
+  transform: translateX(-60px);
+  animation: cardSlide 0.8s ease forwards;
+  animation-delay: 0.6s;
+  -webkit-animation: cardSlide 0.8s ease forwards;
+}
+.card-box {
+  display: flex;
+  flex-direction: row;   /* <-- makes them row */
+  gap: 20px;
+}
+
+.card {
+  flex: 1; 
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+
+  display: flex;           /* NEW */
+  flex-direction: column;  /* NEW */
+}
+
+.card p {
+  margin-bottom: 14px;
+  flex: 1;
+}
+
+.card button {
+  margin-top: auto;        /* NEW: pushes button to bottom */
+}
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff63b6, #7c5cff);
+  color: white;
+  font-size: 16px;
+}
+
+button:active {
+  background: linear-gradient(135deg, #f10081, #3300ff);
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 900px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  text-align: center;
+  border-radius: 18px 18px 0 0;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+}
+
+.footer-links {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #7c5cff;
+  font-weight: bold;
+}
+
+/* ===== Tablet Layout ===== */
+@media (min-width: 768px) {
+
+  .container {
+    margin-top: 100px;
+  }
+
+  .intro-box p {
+    font-size: 1.1rem;
+  }
+
+  .card-box {
+    flex-direction: row;
+  }
+
+  .card {
+    flex: 1;
+  }
+}
+
+@keyframes cardSlide {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+}
+}
+
+@keyframes introDrop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes titleDrop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
