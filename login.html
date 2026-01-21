@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In</title>
+
+  <!-- Your existing CSS -->
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="logo">Teacher Hsu</div>
+</header>
+
+<main class="container">
+
+  <h1 class="title">ဝင်ရောက်ရန်</h1>
+
+  <div class="intro-box">
+
+    <form class="signup-form" onsubmit="signupFake(event)">
+
+      <label>အကောင့်အမည် / ကျောင်းသားအမည်</label>
+      <input type="text" required>
+
+      <label>စကားဝှက်</label>
+      <input type="password" required>
+
+      <button type="submit">ဝင်ရောက်မည်</button>
+
+    </form>
+
+    
+    <!-- Link to Sign Up -->
+    <p class="form-link">
+      အကောင့်မရှိသေးပါက ဤနေရာတွင် >>  
+      <a href="signup.html">Sign up</a>
+      << စာရင်းသွင်းပါ။
+    </p>
+
+    <!-- Back to Welcome -->
+    <p class="form-link">
+      <a href="index.html">← မူလစာမျက်နှာသို့ ပြန်သွားမည်</a>
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Teacher Hsu. All rights reserved.</p>
+</footer>
+
+<script>
+function signupFake(event){
+  event.preventDefault();
+  // later real backend signup goes here
+  window.location.href = "dashboard.html";
+}
+</script>
+
+</body>
+</html>
