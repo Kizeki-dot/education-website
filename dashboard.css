@@ -39,6 +39,9 @@
   font-weight: bold;
   cursor: pointer;
   user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .select-option:active {
@@ -113,3 +116,4 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
