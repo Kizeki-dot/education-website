@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="signup.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Teacher Hsu</div>
+</header>
+
+<main class="container">
+
+  <h1 class="title">သင်ခန်းစာများ</h1>
+
+  <div class="intro-box">
+    <h2>မင်္ဂလာပါ 👋</h2>
+    <p>ကျောင်းသား : မောင်မင်းသူ</p>
+    <p>လက်ရှိအတန်း : Grade 3</p>
+  </div>
+
+  <!-- ===== LESSON SLIDER ===== -->
+  <div class="intro-box">
+    <h3>📘 သင်ခန်းစာ ရွေးချယ်ရန်</h3>
+
+    <input type="text" id="lessonSearch" class="lesson-search" placeholder="သင်ခန်းစာ ရှာပါ...">
+
+    <div class="carousel-container">
+      <div class="carousel-track" id="lessonTrack"></div>
+    </div>
+
+    <div class="slider-dots" id="lessonDots"></div>
+
+    <div class="slider-controls">
+      <button class="arrow-btn" onclick="prevLessonSlide()">&#60;</button>
+      <button class="arrow-btn" onclick="nextLessonSlide()">&#62;</button>
+    </div>
+
+    <button class="go-btn" onclick="goLesson()">သွားမည်</button>
+  </div>
+
+
+  <!-- ===== GAME SLIDER ===== -->
+  <div class="intro-box">
+    <h3>🎮 Q&A ဂိမ်းများ</h3>
+
+    <input type="text" id="gameSearch" class="lesson-search" placeholder="ဂိမ်း ရှာပါ...">
+
+    <div class="carousel-container">
+      <div class="carousel-track" id="gameTrack"></div>
+    </div>
+
+    <div class="slider-dots" id="gameDots"></div>
+
+    <div class="slider-controls">
+      <button class="arrow-btn" onclick="prevGameSlide()">&#60;</button>
+      <button class="arrow-btn" onclick="nextGameSlide()">&#62;</button>
+    </div>
+
+    <button class="go-btn" onclick="goGame()">သွားမည်</button>
+  </div>
+
+  <p class="form-link">
+    <a href="index.html">ထွက်မည် (Log Out)</a>
+  </p>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Teacher Hsu. All rights reserved.</p>
+</footer>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

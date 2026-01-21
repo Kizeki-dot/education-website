@@ -1,0 +1,115 @@
+.lesson-search {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+/* Slider viewport */
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Track */
+.carousel-track {
+  display: flex;
+  transition: transform 0.45s ease;
+}
+
+/* Each page = 6 cards */
+.carousel-page {
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+/* Card base */
+.select-option {
+  background: linear-gradient(135deg, #ff63b6, #7c5cff);
+  color: white;
+  padding: 14px;
+  text-align: center;
+  border-radius: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+}
+
+.select-option:active {
+  transform: scale(0.97);
+}
+
+/* Selected = GOLD (extra visible) */
+.select-option.selected {
+  background: linear-gradient(135deg, #ffd447, #ff9f1c);
+  color: #4a2c00;
+  box-shadow: 0 0 16px rgba(255,212,71,1);
+  border: 3px solid #fff;
+}
+
+/* Game card base color */
+.select-option.game {
+  background: linear-gradient(135deg, #63ff8a, #2bb6ff);
+}
+
+/* Arrows */
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.arrow-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #ff63b6, #7c5cff);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Dots display-only */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+.slider-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+.slider-dots span.active {
+  background: linear-gradient(135deg, #ff63b6, #7c5cff);
+}
+
+/* Go button spacing */
+.go-btn {
+  margin-top: 14px;   
+  margin-bottom: 6px; 
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+  .carousel-page {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
