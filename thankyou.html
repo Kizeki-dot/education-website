@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Success</title>
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="signup.css">
+
+  <style>
+    .success-box {
+      background: linear-gradient(135deg, #ffe3f1, #bfe7ff);
+      padding: 25px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .success-box h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .success-box p {
+      color: #555;
+      font-size: 15px;
+    }
+
+    .success-icon {
+      font-size: 50px;
+      margin-bottom: 10px;
+      animation: pop 0.6s ease-in-out infinite alternate;
+    }
+
+    .success-actions {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .success-actions a {
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ff63b6, #7c5cff);
+      color: white;
+      font-weight: bold;
+    }
+
+    .success-actions a.secondary {
+      background: #eee;
+      color: #333;
+    }
+
+    /* ===== Animation matching other pages ===== */
+    .animate-box {
+      opacity: 0;
+      transform: translateY(-60px);
+      animation: cardSlide 1.2s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    @keyframes pop {
+      from { transform: scale(1); }
+      to   { transform: scale(1.15); }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="logo">Teacher Hsu</div>
+</header>
+
+<main class="container">
+
+  <h1 class="title">စာရင်းသွင်းမှု အောင်မြင်ပါသည်</h1>
+
+  <div class="success-box animate-box">
+    <div class="success-icon">🎉</div>
+    <h2>ကျေးဇူးတင်ပါသည်!</h2>
+    <p>
+      သင့်စာရင်းသွင်းမှုကို အောင်မြင်စွာ လက်ခံရရှိပါသည်။  
+      ယခု Login ဝင်ရောက်ပြီး သင်ခန်းစာများ စတင်ကြည့်ရှုနိုင်ပါပြီ။
+    </p>
+
+    <div class="success-actions">
+      <a href="login.html">Login ဝင်မည်</a>
+      <a href="index.html" class="secondary">မူလစာမျက်နှာသို့</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Teacher Hsu. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
