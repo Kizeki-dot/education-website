@@ -256,6 +256,94 @@ function uploadHomework(){
   hwInputDash.value="";
 }
 
+/* ===== MOBILE SWIPE SUPPORT FOR DASHBOARD SLIDERS ===== */
+
+// --- Lesson slider swipe ---
+let lessonStartX = 0;
+lessonTrack.addEventListener("touchstart", (e) => {
+  lessonStartX = e.touches[0].clientX;
+});
+
+lessonTrack.addEventListener("touchend", (e) => {
+  const lessonEndX = e.changedTouches[0].clientX;
+  if (lessonStartX - lessonEndX > 50) nextLessonSlide(); // swipe left
+  if (lessonEndX - lessonStartX > 50) prevLessonSlide(); // swipe right
+});
+
+// --- Game slider swipe ---
+let gameStartX = 0;
+gameTrack.addEventListener("touchstart", (e) => {
+  gameStartX = e.touches[0].clientX;
+});
+
+gameTrack.addEventListener("touchend", (e) => {
+  const gameEndX = e.changedTouches[0].clientX;
+  if (gameStartX - gameEndX > 50) nextGameSlide(); // swipe left
+  if (gameEndX - gameStartX > 50) prevGameSlide(); // swipe right
+});
+
+/* ===== DESKTOP DRAG SUPPORT FOR DASHBOARD SLIDERS ===== */
+
+// --- Lesson slider mouse drag ---
+let isLessonDragging = false;
+let lessonMouseStartX = 0;
+
+lessonTrack.addEventListener("mousedown", (e) => {
+  isLessonDragging = true;
+  lessonMouseStartX = e.clientX;
+});
+
+window.addEventListener("mouseup", (e) => {
+  if (!isLessonDragging) return;
+  isLessonDragging = false;
+  const lessonMouseEndX = e.clientX;
+
+  if (lessonMouseStartX - lessonMouseEndX > 80) nextLessonSlide();
+  if (lessonMouseEndX - lessonMouseStartX > 80) prevLessonSlide();
+});
+
+// Prevent image/card selection while dragging
+lessonTrack.addEventListener("mouseleave", () => {
+  isLessonDragging = false;
+});
 
 
+// --- Game slider mouse drag ---
+let isGameDragging = false;
+let gameMouseStartX = 0;
+
+gameTrack.addEventListener("mousedown", (e) => {
+  isGameDragging = true;
+  gameMouseStartX = e.clientX;
+});
+
+window.addEventListener("mouseup", (e) => {
+  if (!isGameDragging) return;
+  isGameDragging = false;
+  const gameMouseEndX = e.clientX;
+
+  if (gameMouseStartX - gameMouseEndX > 80) nextGameSlide();
+  if (gameMouseEndX - gameMouseStartX > 80) prevGameSlide();
+});
+
+gameTrack.addEventListener("mouseleave", () => {
+  isGameDragging = false;
+});
+
+/* ===== MOBILE KEYBOARD VISIBILITY FIX ===== */
+
+function scrollInputIntoView(inputElement){
+  inputElement.addEventListener("focus", () => {
+    setTimeout(() => {
+      inputElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }, 300); 
+  });
+}
+
+// Apply to both search fields
+scrollInputIntoView(document.getElementById("lessonSearch"));
+scrollInputIntoView(document.getElementById("gameSearch"));
 
