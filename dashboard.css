@@ -1,3 +1,4 @@
+/* ===== Search box ===== */
 .lesson-search {
   width: 100%;
   padding: 12px;
@@ -7,19 +8,19 @@
   margin-bottom: 12px;
 }
 
-/* Slider viewport */
+/* ===== Slider viewport ===== */
 .carousel-container {
   overflow: hidden;
   width: 100%;
 }
 
-/* Track */
+/* ===== Track ===== */
 .carousel-track {
   display: flex;
   transition: transform 0.45s ease;
 }
 
-/* Each page = 6 cards */
+/* ===== Each page ===== */
 .carousel-page {
   flex: 0 0 100%;
   display: grid;
@@ -29,7 +30,7 @@
   box-sizing: border-box;
 }
 
-/* Card base */
+/* ===== Cards ===== */
 .select-option {
   background: linear-gradient(135deg, #ff63b6, #7c5cff);
   color: white;
@@ -48,7 +49,6 @@
   transform: scale(0.97);
 }
 
-/* Selected = GOLD (extra visible) */
 .select-option.selected {
   background: linear-gradient(135deg, #ffd447, #ff9f1c);
   color: #4a2c00;
@@ -56,12 +56,11 @@
   border: 3px solid #fff;
 }
 
-/* Game card base color */
 .select-option.game {
   background: linear-gradient(135deg, #63ff8a, #2bb6ff);
 }
 
-/* Arrows */
+/* ===== Slider controls ===== */
 .slider-controls {
   display: flex;
   justify-content: center;
@@ -84,7 +83,7 @@
   font-weight: bold;
 }
 
-/* Dots display-only */
+/* ===== Slider dots ===== */
 .slider-dots {
   display: flex;
   justify-content: center;
@@ -104,15 +103,84 @@
   background: linear-gradient(135deg, #ff63b6, #7c5cff);
 }
 
-/* Go button spacing */
+/* ===== Go button spacing ===== */
 .go-btn {
-  margin-top: 14px;   
-  margin-bottom: 6px; 
+  margin-top: 14px;
+  margin-bottom: 6px;
 }
 
-/* Mobile layout */
+/* ===== Mobile grid ===== */
 @media (max-width: 600px) {
   .carousel-page {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* ===== Upload box ===== */
+.upload-box {
+  display: inline-block;
+  padding: 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg,#63ff8a,#2bb6ff);
+  color: #033;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ===== Preview area ===== */
+.preview-area {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.preview-area img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #eee;
+}
+
+/* ===== Upload status text ===== */
+#uploadStatus {
+  margin-top: 8px;
+  color: green;
+  font-weight: bold;
+}
+
+/* ===== Sent images with tick ===== */
+.sent-area {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.sent-img {
+  position: relative;
+}
+
+.sent-img img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.sent-img .tick {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  background: #00c853;
+  color: white;
+  font-size: 14px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
 }

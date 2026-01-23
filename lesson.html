@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson</title>
+
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="lesson.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="logo" style="opacity:0;">Teacher Hsu</div>
+</header>
+
+<main class="container">
+
+<h1 class="title" id="lessonTitle">သင်ခန်းစာ</h1>
+
+<div class="intro-box">
+  <h3>📖 သင်ခန်းစာအကြောင်း</h3>
+  <p id="lessonDesc"></p>
+</div>
+
+<div class="intro-box">
+  <h3>🖼️ သင်ခန်းစာပုံများ</h3>
+
+  <div class="carousel">
+    <div class="carousel-track" id="imageTrack"></div>
+
+    <button class="carousel-control-prev" onclick="prevSlide()">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" onclick="nextSlide()">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <div class="carousel-dots" id="imageDots"></div>
+  <small class="photo-instruction">
+  ပုံကို နှိပ်၍ ကြီးမားစွာကြည့်နိုင်ပါသည်
+  </small>
+
+
+  <textarea class="teacher-note" placeholder="ဆရာမမှ သင်ခန်းစာ မှတ်ချက်ရေးရန်..."></textarea>
+</div>
+
+<div class="intro-box">
+  <button onclick="openVideo()">🎬 Video ကြည့်မည်</button>
+  <br><br>
+  <button onclick="openPdf()">📄 PDF ဖတ်မည်</button>
+</div>
+
+<div class="intro-box homework-box">
+  <h3>📝 အိမ်စာထပ်ရန်</h3>
+
+  <label class="upload-box">
+    📷 ဓာတ်ပုံရွေးမည်
+    <input type="file" id="lessonHomework" accept="image/*" multiple hidden>
+  </label>
+
+  <div id="lessonPreview" class="preview-area"></div>
+
+  <button onclick="sendLessonHomework()">ပို့မည်</button>
+  <p id="lessonUploadStatus" class="upload-status"></p>
+
+  <div id="lessonSentList" class="sent-area"></div>
+</div>
+
+<p class="form-link">
+  <a href="dashboard.html">← Dashboard ပြန်သွားမည်</a>
+</p>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 Teacher Hsu</p>
+</footer>
+
+<!-- VIDEO POPUP -->
+<div class="popup-overlay" id="videoPopup" onclick="closeVideoOutside(event)">
+  <div class="video-popup-box" onclick="event.stopPropagation()">
+    
+    <video id="lessonVideo" controls></video>
+
+    <!-- Close button under video -->
+    <button class="video-close-btn" onclick="closeVideo()">
+      ပိတ်မည်
+    </button>
+
+  </div>
+</div>
+
+<!-- IMAGE FULLSCREEN POPUP -->
+<div class="popup-overlay" id="imagePopup" onclick="closeImageOutside(event)">
+  <div class="popup-box">
+    <img id="popupImage" alt="lesson image">
+
+    <div class="popup-controls">
+      <button onclick="toggleImageFullView()">
+        📱 Fullscreen ကြည့်မည်
+      </button>
+
+      <button onclick="closeImage()">
+        ❌ ပိတ်မည်
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="lesson.js"></script>
+</body>
+</html>

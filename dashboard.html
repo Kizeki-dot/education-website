@@ -66,6 +66,27 @@
     <button class="go-btn" onclick="goGame()">သွားမည်</button>
   </div>
 
+  <!-- ===== HOMEWORK UPLOAD ===== -->
+<div class="intro-box">
+  <h3>📝 အိမ်စာထပ်ရန်</h3>
+  <p>ဓာတ်ပုံရိုက်ပြီး (သို့) ရွေးပြီး အိမ်စာပို့နိုင်ပါသည်</p>
+
+  <label class="upload-box">
+    📷 ဓာတ်ပုံရွေးမည်
+    <input type="file" id="homeworkFile" accept="image/*" multiple hidden>
+  </label>
+
+  <div id="previewArea" class="preview-area"></div>
+
+  <button onclick="uploadHomework()">ပို့မည်</button>
+  <p id="uploadStatus"></p>
+
+  <!-- Sent images -->
+  <div id="sentListDash" class="sent-area"></div>
+</div>
+
+
+
   <p class="form-link">
     <a href="index.html">ထွက်မည် (Log Out)</a>
   </p>

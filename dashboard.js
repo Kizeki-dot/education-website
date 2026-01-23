@@ -212,3 +212,50 @@ function goGame() {
 
 buildLessonPages();
 buildGamePages();
+
+// Homework upload (Dashboard)
+const hwInputDash = document.getElementById("homeworkFile");
+const previewDash = document.getElementById("previewArea");
+const sentDash = document.getElementById("sentListDash");
+const statusDash = document.getElementById("uploadStatus");
+
+hwInputDash.addEventListener("change",()=>{
+  previewDash.innerHTML="";
+  [...hwInputDash.files].forEach(f=>{
+    const img=document.createElement("img");
+    img.src=URL.createObjectURL(f);
+    previewDash.appendChild(img);
+  });
+});
+
+function uploadHomework(){
+  if(hwInputDash.files.length===0){
+    alert("ဓာတ်ပုံရွေးပါ");
+    return;
+  }
+
+  sentDash.innerHTML="";
+  [...hwInputDash.files].forEach(f=>{
+    const wrapper=document.createElement("div");
+    wrapper.className="sent-img";
+
+    const img=document.createElement("img");
+    img.src=URL.createObjectURL(f);
+
+    const tick=document.createElement("div");
+    tick.className="tick";
+    tick.textContent="✓";
+
+    wrapper.appendChild(img);
+    wrapper.appendChild(tick);
+    sentDash.appendChild(wrapper);
+  });
+
+  statusDash.textContent="အိမ်စာပို့ပြီးပါပြီ ✅";
+  previewDash.innerHTML="";
+  hwInputDash.value="";
+}
+
+
+
+
